@@ -12,22 +12,136 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
+    body{ 
+      font-family: 'Inter',sans-serif; 
+      font-size: 14px;  
+      font-style: normal; 
+      background-color: hsl(217, 54%, 11%); 
+      color: hsl(0, 0%, 100%);  
+      min-height: 100vh; 
+      display: flexbox; 
+      justify-content: center; 
+      align-items: center; 
+    } 
+
+    img { 
+    width: 100%;
+    }
+
+    .profile-card { 
+    padding: 1.4rem; 
+    padding-bottom: 1.6rem; 
+    border-radius: .5rem; 
+    background-color: hsl(216, 50%, 16%); 
+    width: 326px; 
+    text-align: center; 
+    margin: auto;
+    } 
+
+    .profile{  
+    margin: 0rem;  
+    }
+
+    .profile img{ 
+    border-radius:5%; 
+    width: 100%; 
+    height: 100%; 
+    } 
+    
+    .name { 
+    padding-right: 5rem; 
+    }
+
+    .description {
+      color: hsl(215, 51%, 70%);
+      font-size:medium;
+      text-align: start;
+      font-weight: lighter;
+      line-height: 28px;
+      
+    }
+
+    .value-days{
+      display: flex;
+      justify-content: space-between;
+      border-bottom:1px solid hsl(215, 32%, 27%);
+    }
+
+    .creator img {
+      margin-top: 15px;
+      margin-right: 10px;
+      border-radius: 50%;
+      border: 1px solid white ;
+      width: 50px;
+      height: auto;
+    }
+
+    .value{
+      color: hsl(178, 100%, 50%);
+      font-weight: bold;
+      font-size: medium;
+    }
+
+    .days{
+      color: hsl(215, 51%, 70%) ;
+    }
+
+    span{
+      padding-left: 1%;
+      color:  hsl(215, 51%, 70%);
+    }
+
+    .creator-img{
+      display: flex;
+      align-items: center;
+    }
+
+    .profile:hover {
+      opacity: 0.5;
+    }
+
+    .name:hover{
+      color: hsl(178, 100%, 50%);
+    }
+
+    span:hover{
+      color: hsl(178, 100%, 50%);
+    }
+
+   </style>
 </head>
 <body>
+  <main class="profile-card"> 
+    <div class="profile"> 
+      <img src="./images/image-equilibrium.jpg" alt="equi" > 
+      
+    </div> 
 
-  Equilibrium #3429
+    <h1 class="name">Equilibrium #3429</h1>
 
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
+    <p class="description">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="value-days">
+      <p class="value">
+        <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+        0.041ETH
+      </p>
+      <p class="days"> 
+        <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+        3 days left
+      </p>
+    </div>
+    <div class="creator">
+      <div class="creator-img">
+        <img src="./images/image-avatar.png"></img>
+        Creation of <span> Jules Wyvern </span>
+      </div>  
+    </div>
+    
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Kanisha</a>.
   </div>
 </body>
 </html>
