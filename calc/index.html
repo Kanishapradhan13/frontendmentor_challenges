@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+        <p>Val 1:</p>
+        <input id="val1" type="text">
+        <p>Val 2:</p>
+        <input id="val2" type="text">
+    </div>
+    <br>
+    <br>
+    <div>
+        <button id="add">ADD</button>
+        <button id="subtract">SUBTRACT</button>
+        <button id="multiply">MULTIPLY</button>
+        <button id="divide">DIVIDE</button>
+    </div>
+    <br>
+    <div id="answer">
+        <p>Answer is:</p>
+    </div>
+    
+    <script>
+    // Select the input fields and buttons
+    const val1Input = document.getElementById('val1');
+    const val2Input = document.getElementById('val2');
+    const addButton = document.getElementById('add');
+    const subtractButton = document.getElementById('subtract');
+    const multiplyButton = document.getElementById('multiply');
+    const divideButton = document.getElementById('divide');
+    const answerDiv = document.getElementById('answer');
+
+    // Add event listeners to the buttons
+    addButton.addEventListener('click', performAddition);
+    subtractButton.addEventListener('click', performSubtraction);
+    multiplyButton.addEventListener('click', performMultiplication);
+    divideButton.addEventListener('click', performDivision);
+
+    // Function to perform addition
+    function performAddition() {
+        const val1 = parseFloat(val1Input.value);
+        const val2 = parseFloat(val2Input.value);
+        const result = val1 + val2;
+        displayAnswer(result);
+    }
+
+    // Function to perform subtraction
+    function performSubtraction() {
+        const val1 = parseFloat(val1Input.value);
+        const val2 = parseFloat(val2Input.value);
+        const result = val1 - val2;
+        displayAnswer(result);
+    }
+
+    // Function to perform multiplication
+    function performMultiplication() {
+        const val1 = parseFloat(val1Input.value);
+        const val2 = parseFloat(val2Input.value);
+        const result = val1 * val2;
+        displayAnswer(result);
+    }
+
+    // Function to perform division
+    function performDivision() {
+        const val1 = parseFloat(val1Input.value);
+        const val2 = parseFloat(val2Input.value);
+        if (val2 === 0) {
+            displayAnswer('Cannot divide by zero');
+        } else {
+            const result = val1 / val2;
+            displayAnswer(result);
+        }
+    }
+
+    // Function to display the answer
+    function displayAnswer(result) {
+        answerDiv.innerHTML = `<p>Answer is: ${result}</p>`;
+    }
+    </script>
+</body>
+</html>
