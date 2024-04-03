@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do</title>
+  <style>
+    .Name {
+      border-bottom: 1px solid black;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 2;
+     
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    li button {
+      margin-left: 10px;
+    }
+
+    .bullet {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="Name">
+    <p>Name:
+      <input id="name" type="text">
+      <button id="add">add</button>
+    </p>
+  </div>
+
+  <ul id="bulletList"></ul>
+
+  <script>
+    const nameInput = document.getElementById('name');
+    const addButton = document.getElementById('add');
+    const bulletList = document.getElementById('bulletList');
+
+    addButton.addEventListener('click', function() {
+      const name = nameInput.value.trim();
+      if (name !== '') {
+        const listItem = document.createElement('li');
+        const bulletIcon = document.createElement('span');
+        bulletIcon.classList.add('bullet');
+        bulletIcon.textContent = '•';
+        const itemText = document.createElement('span');
+        itemText.textContent = name;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function() {
+          bulletList.removeChild(listItem);
+        });
+
+        listItem.appendChild(bulletIcon);
+        listItem.appendChild(itemText);
+        listItem.appendChild(deleteButton);
+        bulletList.appendChild(listItem);
+        nameInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
